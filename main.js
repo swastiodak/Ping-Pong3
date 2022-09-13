@@ -23,6 +23,7 @@ function setup() {
   video.parent("gameConsole");
   poseNet = ml5.poseNet(video, modelLoaded);
   poseNet.on("pose", gotPoses);
+  document.getElementById("status").style.display = "none";
 }
 
 
@@ -170,4 +171,9 @@ function gotPoses(result) {
 
 function modelLoaded() {
   console.log("model has loaded.");  
+}
+
+function start(){
+  document.getElementById("status").innerHTML = "Game is Loading";
+  document.getElementById("status").style.display = "inline-block";
 }
