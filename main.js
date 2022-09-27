@@ -14,6 +14,7 @@ var ball = {
   dx: 3,
   dy: 3
 }
+gameStatus = "";
 
 function setup() {
   var canvas = createCanvas(700, 600);
@@ -63,6 +64,10 @@ function draw() {
 
   //function move call which in very important
   move();
+
+  if (gameStatus == "start"){
+    
+  }
 }
 
 
@@ -174,6 +179,7 @@ function modelLoaded() {
 }
 
 function start(){
+  gameStatus = "start";
   document.getElementById("status").innerHTML = "Game is Loading";
   document.getElementById("status").style.display = "inline-block";
 }
